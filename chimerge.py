@@ -20,7 +20,6 @@ class Chimerge(object):
         data_len=len(self.data)
         while min(self.value_counts) < data_len * min_rate:
             i = self.value_sort.index(self.value_counts.idxmin())
-            j = 0
             if i == 0:
                 j = i + 1
             elif i == len(self.value_counts) - 1:
