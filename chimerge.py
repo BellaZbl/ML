@@ -35,6 +35,7 @@ class Chimerge(object):
                 self.value_counts[self.value_sort[i]] += self.value_counts[self.value_sort[j]]
                 self.value_counts.drop(self.value_sort[j], inplace=True)
                 self.value_sort.pop(j)
+        self.update_data()
 
     def update_data(self):
         # 根据新的value值，更新data
@@ -95,6 +96,7 @@ class Chimerge(object):
             unstack_data.drop(self.value_sort[min_index + 1], inplace=True)
             self.value_counts.drop(self.value_sort[min_index+1],inplace=True)
             self.value_sort.pop(min_index + 1)
+        self.update_data()
 
 
 
