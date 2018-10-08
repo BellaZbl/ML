@@ -78,7 +78,7 @@ class Chimerge(object):
         while len(unstack_data) > expect_num:
             kafang_lists = []
             for i in range(len(unstack_data) - 1):
-                part_data = unstack_data[i:i + 2]
+                part_data = unstack_data.iloc[i:i + 2,:]
                 total = part_data.iloc[:, 0].sum() + part_data.iloc[:, 1].sum()
 
                 kafang = 0
