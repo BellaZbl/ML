@@ -68,9 +68,9 @@ class Chimerge(object):
         unstack_data = group_data.unstack()
         return unstack_data
 
-    def chimerge(self,positive_rate=1.0,fillna_value=1,value_num=10):
+    def chimerge(self,positive_weight=1.0,fillna_value=1,value_num=10):
         # chimerge分箱，这里是用0为positiv类，在样本不均衡情况下可以调节positive_rate,fillna_value用来填补空值，防止出现0值，value_num为目标分箱数
-        good_rate = positive_rate
+        good_rate = positive_weight
         unstack_data=self.get_unstack_data()
         unstack_data.iloc[:, 0] *= good_rate
         unstack_data.fillna(fillna_value, inplace=True)
